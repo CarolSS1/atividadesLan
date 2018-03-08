@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">IntentImplicita</string>
+    <string name="web">Digite o endereço web: </string>
+</resources>
