@@ -3,7 +3,6 @@ package com.example.alunos.passagemdados;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mandaMensagem(View v){
-        EditText nome = findViewById(R.id.txtNome);
+        EditText nome = findViewById(R.id.nome);
         String oNome = nome.getText().toString();
         if(oNome.matches("")){
             Toast toast = Toast.makeText(getApplicationContext(),
