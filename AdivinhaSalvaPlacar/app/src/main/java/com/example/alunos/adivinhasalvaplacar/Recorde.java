@@ -2,9 +2,7 @@ package com.example.alunos.adivinhasalvaplacar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.EditText;
 import android.content.Intent;
 
 
@@ -13,9 +11,10 @@ public class Recorde extends AppCompatActivity {
     int recorde[] = new int[6];
     int placar;
     int var;
-    int x;
+    int x, v = 0;
     String chances;
-    
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +31,18 @@ public class Recorde extends AppCompatActivity {
         chances = pacote.getString("chances");
 
         placar = Integer.parseInt(chances);
-
-        for(x = 0; x < 6; x++){
-            if(placar <= recorde[x]){
-                var = recorde [x];
-                recorde[x] = placar;
-                placar = var;
+        if ( v == 0 ){
+            for(x = 0; x < 6; x++){
+                recorde[x] = 1;
+            }
+            v = 1;
+        }else {
+            for(x = 0; x < 6; x++){
+                if(placar <= recorde[x]){
+                    var = recorde [x];
+                    recorde[x] = placar;
+                    placar = var;
+                }
             }
         }
 

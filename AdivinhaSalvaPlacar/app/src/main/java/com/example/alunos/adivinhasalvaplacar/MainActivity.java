@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        num_aleatorio = gerador.nextInt(10);
+        num_aleatorio = gerador.nextInt(1001);
         c = 0;
         certo = 0;
         txtnum = findViewById(R.id.txtNum);
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     public void deNovo(View v){
         c = 0;
         certo = 0;
-        num_aleatorio = gerador.nextInt(10);
+        num_aleatorio = gerador.nextInt(1001);
         TextView mensagem = (TextView) findViewById(R.id.id);
         String msg;
         msg = "Informe um número entre 1 e 1000:";
