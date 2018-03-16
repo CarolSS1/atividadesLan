@@ -23,6 +23,11 @@ public class IntentImplicita extends AppCompatActivity {
                     "Digite um endereço web...", Toast.LENGTH_SHORT);
             toast.show();
             return;
+        } else if((aUrl.indexOf("http://")!=0) && (aUrl.indexOf(".com")!=0)){
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Digite um endereço web válido ", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
         }
         Intent intencao = new Intent(Intent.ACTION_VIEW, Uri.parse(aUrl.toLowerCase()));
         startActivity(intencao);
