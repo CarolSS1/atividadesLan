@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context="com.example.alunos.myapplication.MainActivity">
 
+    <Button
+        android:id="@+id/lblButton2"
+        android:layout_width="112dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="8dp"
+        android:onClick="deNovo"
+        android:text="@string/lblButton2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.608" />
+
     <TextView
         android:id="@+id/id"
         android:layout_width="wrap_content"
@@ -22,14 +38,15 @@
         android:id="@+id/button"
         android:layout_width="88dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="56dp"
         android:layout_marginEnd="148dp"
         android:layout_marginStart="148dp"
+        android:layout_marginTop="92dp"
         android:onClick="joga"
         android:text="@string/lblButton"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cxeNum" />
 
     <EditText
         android:id="@+id/cxeNum"
