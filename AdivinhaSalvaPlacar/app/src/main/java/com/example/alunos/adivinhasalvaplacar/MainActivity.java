@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     Random gerador = new Random();
-    int num_aleatorio = gerador.nextInt(1001), c = 3;
+    int num_aleatorio = gerador.nextInt(1001), c = 0;
 
 
     public void joga(View v){
@@ -29,41 +29,30 @@ public class MainActivity extends AppCompatActivity {
         int num;
         num = Integer.parseInt(usuario);
         String msg;
-        if(c>0){
-            if(num == num_aleatorio){
-                msg = "Parabéns! Você acertou! ";
-                mensagem.setText(msg);
-                c = 0;
-            } else {
-                --c;
-                if(c == 0){
-                    msg = "Você perdeu! O número era " + num_aleatorio + " ";
-                    mensagem.setText(msg);
-                } else {
-                    msg = "Você errou! Ainda tem " + c + " chance(s)";
-                    if (num>num_aleatorio){
-                        msg += " O palpite foi maior";
-                        mensagem.setText(msg);
-                    } else {
-                        msg += " O palpite foi menor";
-                        mensagem.setText(msg);
-                    }
-                }
-
-            }
+        if(num == num_aleatorio){
+            msg = "Parabéns! Você acertou! ";
+            mensagem.setText(msg)
         } else {
-            msg = "Suas chances acabaram!";
-            mensagem.setText(msg);
+            ++c;
+            msg = "Você errou!";
+            if (num>num_aleatorio){
+                msg += " O palpite foi maior";
+                mensagem.setText(msg);
+            } else {
+                msg += " O palpite foi menor";
+                mensagem.setText(msg);
+            }
         }
-
     }
 
+
+
     public void deNovo(View v){
-        c = 3;
+        c = 0;
         num_aleatorio = gerador.nextInt(1001);
         TextView mensagem = (TextView) findViewById(R.id.id);
         String msg;
-        msg = "Informe um número entre 0 e 10:";
+        msg = "Informe um número entre 1 e 1000:";
         mensagem.setText(msg);
     }
 }
