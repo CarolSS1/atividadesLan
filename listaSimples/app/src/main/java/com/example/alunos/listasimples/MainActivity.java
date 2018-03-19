@@ -14,7 +14,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         String[] nomes = {"João", "Maria", "José", "Ana"};
         String[] aniversarios = {"12/01", "07/09", "05/04", "23/07"};
+
+        ListView lista = findViewById(R.id.list_view1);
+
+        ArrayList<HashMap<String, String>> valores = new ArrayList<>();
+        for (int i = 0; i < nomes.length; i++){
+            HashMap<String, String> item = new HashMap<>();
+            item.put("lbl_nome", nomes[i]);
+            item.put("lbl_niver", aniversarios[i]);
+            valores.add(item);
+        }
+
+        String[] chaves = {"lbl_nome", "lbl_niver"};
+        int[] labels = {R.id.lbl_nome, R.id.lbl_niver};
+
+        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(),
+                valores, R.layout.item_lista, chaves, labels);
+
+        lista.setAdapter(adapter);
     }
 }
