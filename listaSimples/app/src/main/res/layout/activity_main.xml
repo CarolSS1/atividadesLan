@@ -19,8 +19,11 @@
         android:id="@+id/list_view1"
         android:layout_width="368dp"
         android:layout_height="453dp"
+        android:layout_marginTop="8dp"
         android:headerDividersEnabled="false"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="42dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_titulo" />
 
 </android.support.constraint.ConstraintLayout>

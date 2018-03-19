@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<HashMap<String, String>> valores = new ArrayList<>();
         for (int i = 0; i < nomes.length; i++){
             HashMap<String, String> item = new HashMap<>();
-            item.put("lbl_nome", nomes[i]);
-            item.put("lbl_niver", aniversarios[i]);
+            item.put("nome", nomes[i]);
+            item.put("niver", aniversarios[i]);
             valores.add(item);
         }
 
-        String[] chaves = {"lbl_nome", "lbl_niver"};
+        String[] chaves = {"nome", "niver"};
         int[] labels = {R.id.lbl_nome, R.id.lbl_niver};
 
         SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(),
