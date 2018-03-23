@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.alunos.listadinamica.model.Pessoa;
 
@@ -18,13 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        lista.add(new Pessoa ("Maria de Oliveira", "99323-1234",
-                R.mipmap.ic_launcher_round));
-        lista.add(new Pessoa("Pedro da Silva", "3690-1234",
-                R.mipmap.ic_launcher_round));
-        lista.add(new Pessoa("João de Souza", "3690-4321",
-                R.mipmap.ic_launcher_round));
     }
 
     public void mostrarLista(View v){
@@ -33,5 +27,15 @@ public class MainActivity extends AppCompatActivity {
         bundle.putParcelableArrayList("contatos", lista);
         it.putExtras(bundle);
         startActivity(it);
+    }
+
+    public void salvar(View v){
+        EditText nome = findViewById(R.id.nome);
+        EditText telefone = findViewById(R.id.telefone);
+        String contatoNome = nome.getText().toString();
+        String contatoTelefone = telefone.getText().toString();
+
+        lista.add(new Pessoa (contatoNome, contatoTelefone,
+                R.mipmap.ic_launcher_round));
     }
 }
