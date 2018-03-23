@@ -4,16 +4,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import java.util.Random;
 import android.widget.EditText;
 import android.content.Intent;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import com.example.alunos.adivinhasalvaplacar.Recorde;
 
 public class MainActivity extends AppCompatActivity {
 
     int c, num_aleatorio, certo;
     EditText txtnum;
     Random gerador = new Random();
-    Intent i;
+    ArrayList<Recorde> lista = new ArrayList<>();
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         c = 0;
         certo = 0;
         txtnum = findViewById(R.id.txtNum);
-        i = new Intent(MainActivity.this, Recorde.class);
     }
 
     public void joga(View v){
@@ -41,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 mensagem.setText(msg);
                 certo = 1;
 
-                Bundle bundle = new Bundle();
-                bundle.putInt("chances", c);
-                i.putExtras(bundle);
+                lista.add(new Recorde (c, R.mipmap.ic_launcher_round));
+
             } else {
                 ++c;
                 msg = "Você errou!";
@@ -73,7 +75,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void carregarRecorde(View v){
-        startActivity(i);
+        Intent it = new Intent(this, mostraRecorde.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("recorde", lista);
+        it.putExtras(bundle);
+        startActivity(it);
     }
 }
 

@@ -5,10 +5,6 @@
     <string name="lblButton3">Recordes</string>
     <string name="lblAviso"> Informe o número entre 1 e 1000: </string>
     <string name="lblAviso2"> Informe o número: </string>
-    <string name="lblPosicao1"> 1º Lugar: </string>
-    <string name="lblPosicao2"> 2º Lugar: </string>
-    <string name="lblPosicao3"> 3º Lugar: </string>
-    <string name="lblPosicao4"> 4º Lugar: </string>
-    <string name="lblPosicao5"> 5º Lugar: </string>
-    <string name="lblPosicao6"> 6º Lugar: </string>
+    <string name="lbl_chances"> ... </string>
+
 </resources>
