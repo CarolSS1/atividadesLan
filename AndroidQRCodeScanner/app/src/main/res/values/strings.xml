@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidQRCodeScanner</string>
+    <string name="lblNome">Nome</string>
+    <string name="lblEndereco">Endereco</string>
+    <string name="btnScan"> SCAN QR CODE </string>
+</resources>
