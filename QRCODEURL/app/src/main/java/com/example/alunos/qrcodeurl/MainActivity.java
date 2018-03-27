@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         btnScan = findViewById(R.id.btnScan);
-        lblNome = findViewById(R.id.lblNome);
-        lblEndereco = findViewById(R.id.lblEndereco);
+        lblNome = findViewById(R.id.lblTexto1);
+        lblEndereco = findViewById(R.id.lblTexto2);
+
         //intializing scan object
         qrScan = new IntentIntegrator(this);
 
@@ -53,14 +54,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }else {
                 try{
                     JSONObject obj = new JSONObject(result.getContents());
-                    lblNome.setText(obj.getString("lblNome"));
-                    lblEndereco.setText(obj.getString("lblEndereco"));
-                    if((lblEndereco.getText().toString().indexOf("http://")==0) && (lblEndereco.getText().toString().indexOf(".com")==0)){
-                            Intent intencao = new Intent(Intent.ACTION_VIEW, Uri.parse(lblEndereco.getText().toString().toLowerCase()));
-                            startActivity(intencao);
+                    lblNome.setText(obj.getString("name"));
+                    if((lblNome.getText().toString().indexOf("http://")==0) && (lblNome.getText().toString().indexOf(".com")==0)){
+                        Intent intencao = new Intent(Intent.ACTION_VIEW, Uri.parse(lblNome.getText().toString().toLowerCase()));
+                        startActivity(intencao);
+                    } else {
+                        lblEndereco.setText(obj.getString("address"));
                     }
 
-                }catch (Exception e){
+
+                }catch (JSONException e){
                     e.printStackTrace();
                     Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 }

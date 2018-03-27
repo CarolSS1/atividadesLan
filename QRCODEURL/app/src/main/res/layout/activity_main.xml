@@ -7,7 +7,7 @@
     tools:context="com.example.alunos.qrcodeurl.MainActivity">
 
     <TextView
-        android:id="@+id/lblNome"
+        android:id="@+id/lblTexto1"
         android:layout_width="76dp"
         android:layout_height="19dp"
         android:layout_marginTop="132dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/lblEndereco"
+        android:id="@+id/lblTexto2"
         android:layout_width="74dp"
         android:layout_height="18dp"
         android:layout_marginEnd="8dp"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblNome" />
+        app:layout_constraintTop_toBottomOf="@+id/lblTexto1" />
 
     <Button
         android:id="@+id/btnScan"
@@ -42,6 +42,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblEndereco" />
+        app:layout_constraintTop_toBottomOf="@+id/lblTexto2" />
 
 </android.support.constraint.ConstraintLayout>
