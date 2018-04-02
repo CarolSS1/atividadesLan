@@ -53,19 +53,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Result Not Found", Toast.LENGTH_LONG).show();
             }else {
                 try{
-                    JSONObject obj = new JSONObject(result.getContents());
-                    lblNome.setText(obj.getString("name"));
-                    if((lblNome.getText().toString().indexOf("http://")==0) && (lblNome.getText().toString().indexOf(".com")==0)){
-                        Intent intencao = new Intent(Intent.ACTION_VIEW, Uri.parse(lblNome.getText().toString().toLowerCase()));
+                    String string = result.getContents();
+                    if((string.indexOf("http://")!=0) && (string.indexOf(".com")!=0)){
+                        Intent intencao = new Intent(Intent.ACTION_VIEW, Uri.parse(string.toLowerCase()));
                         startActivity(intencao);
                     } else {
+                        JSONObject obj = new JSONObject(result.getContents());
+                        lblNome.setText(obj.getString("name"));
                         lblEndereco.setText(obj.getString("address"));
                     }
-
-
                 }catch (JSONException e){
-                    String string = result.getContents();
-
                     e.printStackTrace();
                     Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 }
