@@ -1,25 +1,25 @@
 package com.example.alunos.adivinhasalvaplacar;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.EditText;
-import android.content.Intent;
+
+import com.example.alunos.adivinhasalvaplacar.model.Recorde;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.example.alunos.adivinhasalvaplacar.Recorde;
-
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<Recorde> lista = new ArrayList<>();
     int c, num_aleatorio, certo;
     EditText txtnum;
     Random gerador = new Random();
-    ArrayList<Recorde> lista = new ArrayList<>();
-    @Override
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -43,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 msg = "Parabéns! Você acertou! ";
                 mensagem.setText(msg);
                 certo = 1;
-
-                lista.add(new Recorde (c, R.mipmap.ic_launcher_round));
-
+                lista.add(new Recorde (c));
             } else {
                 ++c;
                 msg = "Você errou!";

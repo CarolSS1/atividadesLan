@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
+import com.example.alunos.adivinhasalvaplacar.adapter.RecordeAdapter;
+import com.example.alunos.adivinhasalvaplacar.model.Recorde;
 import java.util.ArrayList;
 
-import com.example.alunos.adivinhasalvaplacar.Recorde;
-import com.example.alunos.adivinhasalvaplacar.RecordeAdapter;
-
-
 public class mostraRecorde extends AppCompatActivity{
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recorde);
@@ -24,7 +24,7 @@ public class mostraRecorde extends AppCompatActivity{
 
         try{
             ArrayList <Recorde> lista = bundle.getParcelableArrayList(
-                    "chances");
+                    "recorde");
             RecordeAdapter adapter = new RecordeAdapter(
                     mostraRecorde.this, lista);
             listview.setAdapter(adapter);

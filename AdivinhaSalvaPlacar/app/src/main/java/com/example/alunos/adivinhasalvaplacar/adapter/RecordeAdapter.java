@@ -1,23 +1,14 @@
-package com.example.alunos.adivinhasalvaplacar;
+package com.example.alunos.adivinhasalvaplacar.adapter;
 
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.alunos.adivinhasalvaplacar.R;
-import com.example.alunos.adivinhasalvaplacar.Recorde;
+import com.example.alunos.adivinhasalvaplacar.model.Recorde;
+import java.util.List;
 
-import java.util.List;
-import java.util.List;
 
 
 public class RecordeAdapter extends BaseAdapter{
@@ -51,11 +42,9 @@ public class RecordeAdapter extends BaseAdapter{
         View v = atividade.getLayoutInflater().inflate(R.layout.row_layout,
                 parent, false);
 
-        TextView chances = v.findViewById(R.id.lbl_chances);
-        chances.setText(obj.getRecorde());
-
+        TextView lbl_chances = v.findViewById(R.id.lbl_chances);
+        lbl_chances.setText(obj.getChance());
 
         return v;
     }
 }
-

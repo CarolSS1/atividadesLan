@@ -1,14 +1,9 @@
-package com.example.alunos.adivinhasalvaplacar;
+package com.example.alunos.adivinhasalvaplacar.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.TextView;
-import android.content.Intent;
 
-
-public class Recorde extends AppCompatActivity {
+public class Recorde implements Parcelable{
 
     private int chances;
 
@@ -16,8 +11,12 @@ public class Recorde extends AppCompatActivity {
         this.chances = chances;
     }
 
-    public int getRecorde(){
+    public int getChance(){
         return chances;
+    }
+
+    public void setChance(int chances){
+        this.chances = chances;
     }
 
     protected Recorde(Parcel in) {
@@ -32,7 +31,7 @@ public class Recorde extends AppCompatActivity {
         dest.writeInt(chances);
     }
 
-    @SuppressWarnings ("unused")
+    @SuppressWarnings("unused")
     public static final Parcelable.Creator<Recorde> CREATOR =
             new Parcelable.Creator<Recorde>(){
                 @Override
