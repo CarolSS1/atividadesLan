@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        num_aleatorio = gerador.nextInt(10);
+        num_aleatorio = gerador.nextInt(1001);
         c = 1;
         certo = 0;
         var = 0;
@@ -49,13 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 msg = "Parabéns! Você acertou! ";
                 mensagem.setText(msg);
                 certo = 1;
-                for(i = 0; i<4; i++){
-                    if(vetor[i] >= vetor[i+1]){
-                        maior = vetor[i+1];
-                    } else {
-                        maior = vetor[i];
-                    }
-                }
                 for(int i = 0; i<5; i++){
                     if(i == 0){
                         var = vetor[i];
@@ -86,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     public void deNovo(View v) {
         c = 1;
         certo = 0;
-        num_aleatorio = gerador.nextInt(10);
+        num_aleatorio = gerador.nextInt(1001);
         TextView mensagem = (TextView) findViewById(R.id.id);
         String msg;
         msg = "Informe um número entre 1 e 1000:";
@@ -94,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void carregarRecorde(View v){
+        for(i = 0; i<4; i++){
+            if(vetor[i] >= vetor[i+1]){
+                maior = vetor[i+1];
+            } else {
+                maior = vetor[i];
+            }
+        }
         vetor2[0] = maior;
         vetor2[1] = vetor[0];
         vetor2[2] = vetor[1];
