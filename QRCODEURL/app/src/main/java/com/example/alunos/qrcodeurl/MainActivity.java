@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }else {
                 try{
                     String string = result.getContents();
-                    if((string.indexOf("http://")!=0) && (string.indexOf(".com")!=0)){
+                    if((string.indexOf("http://www")!=0) && (string.indexOf(".com")!=0)){
                         Intent intencao = new Intent(Intent.ACTION_VIEW, Uri.parse(string.toLowerCase()));
                         startActivity(intencao);
                     } else {
