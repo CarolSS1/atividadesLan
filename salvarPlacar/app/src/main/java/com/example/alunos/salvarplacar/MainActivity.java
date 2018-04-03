@@ -1,7 +1,6 @@
 package com.example.alunos.salvarplacar;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,13 +48,20 @@ public class MainActivity extends AppCompatActivity {
                 msg = "Parabéns! Você acertou! ";
                 mensagem.setText(msg);
                 certo = 1;
-                for(int i = 0; i<5; i++){
+                for(i = 0; i<5; i++){
                     if(i == 0){
                         var = vetor[i];
                         vetor[i] = c;
                     } else {
                         c = vetor[i];
                         vetor[i] = var;
+                    }
+                }
+                for(i = 0; i<4; i++){
+                    if(vetor[i] >= vetor[i+1]){
+                        maior = vetor[i+1];
+                    } else {
+                        maior = vetor[i];
                     }
                 }
             } else {
@@ -87,13 +93,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void carregarRecorde(View v){
-        for(i = 0; i<4; i++){
-            if(vetor[i] >= vetor[i+1]){
-                maior = vetor[i+1];
-            } else {
-                maior = vetor[i];
-            }
-        }
         vetor2[0] = maior;
         vetor2[1] = vetor[0];
         vetor2[2] = vetor[1];
