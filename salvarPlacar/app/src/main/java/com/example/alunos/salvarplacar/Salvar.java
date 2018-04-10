@@ -35,23 +35,13 @@ public class Salvar extends AppCompatActivity{
         TextView txtmaior = (TextView) findViewById(R.id.textMaior);
 
         Maior = Integer.toString(maior);
-        if (Maior.matches("0")){
-            arquivo = getPreferences(Context.MODE_PRIVATE);
-            Maior = arquivo.getString("valor", m);
-            Log.i("Maior", m);
 
-        } else {
-            m = Maior;
-            r1 = Integer.toString(R1);
-            r2 = Integer.toString(R2);
-            r3 = Integer.toString(R3);
-            r4 = Integer.toString(R4);
-            r5 = Integer.toString(R5);
-            arquivo = getPreferences(Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = arquivo.edit();
-            editor.putString("maior", m);
-            editor.commit();
-        }
+        m = Maior;
+        r1 = Integer.toString(R1);
+        r2 = Integer.toString(R2);
+        r3 = Integer.toString(R3);
+        r4 = Integer.toString(R4);
+        r5 = Integer.toString(R5);
 
 
         txtR1.setText(r1);
